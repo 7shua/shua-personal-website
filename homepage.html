@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shua's Personal Website - Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a1e3e 0%, #1a3a52 50%, #0d5a7a 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #0277bd 100%);
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  animation: fadeInDown 0.8s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,100 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+  background-size: cover;
+  pointer-events: none;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  background: linear-gradient(135deg, #e3f2fd 0%, #b3e5fc 100%);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-bottom: 3px solid #0d47a1;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #0d47a1;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 71, 161, 0.3);
+}
+
+article {
+  padding: 50px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.hero {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+figure {
+  flex: 0 0 300px;
+  animation: slideInLeft 0.8s ease;
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(13, 71, 161, 0.3);
+  transition: transform 0.3s ease;
+  border: 4px solid #0277bd;
+}
+
+figure img:hover {
+  transform: scale(1.05);
+}
+
+.hero > aside {
+  flex: 1;
+  min-width: 250px;
+  animation: slideInRight 0.8s ease;
+}
+
+.hero > aside h2 {
+  font-size: 36px;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+.nickname-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #0277bd 0%, #00838f 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero > aside p {
+  color: #1a237e;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0277bd 0%, #01579b 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(2, 119, 189, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(2, 119, 189, 0.5);
+}
+
+.btn-secondary {
+  background: white;
+  color: #0d47a1;
+  border: 2px solid #0d47a1;
+}
+
+.btn-secondary:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+.social-links {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #b3e5fc;
+}
+
+.social-links h4 {
+  color: #0d47a1;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.linkedin:hover {
+  background: #005885;
+}
+
+.pinterest {
+  background: #c00f0f;
+}
+
+.pinterest:hover {
+  background: #c00f0f;
+}
+
+.instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagram:hover {
+  filter: brightness(0.9);
+}
+
+.email {
+  background: #ea4335;
+}
+
+.email:hover {
+  background: #c5221f;
+}
+
+section > h2 {
+  color: #0d47a1;
+  font-size: 28px;
+  margin: 50px 0 30px 0;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #0277bd;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(2, 119, 189, 0.15);
+  transition: all 0.3s ease;
+  border-top: 5px solid #0277bd;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(13, 71, 161, 0.2);
+}
+
+.card .icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #0d47a1;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #1a237e;
+  line-height: 1.7;
+}
+
+time {
+  background: linear-gradient(135deg, #0277bd 0%, #00838f 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 30px 0;
+  box-shadow: 0 8px 20px rgba(2, 119, 189, 0.3);
+  display: block;
+}
+
+time h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+time p {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.highlights {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #ff6f00;
+  margin: 30px 0;
+}
+
+.highlights h3 {
+  color: #e65100;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.highlights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.highlights li {
+  padding: 12px 0;
+  color: #1a237e;
+  border-bottom: 1px solid rgba(255, 111, 0, 0.2);
+}
+
+.highlights li:last-child {
+  border-bottom: none;
+}
+
+.highlights li::before {
+  content: "⭐ ";
+  margin-right: 10px;
+  color: #ff6f00;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill {
+  background: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #0277bd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill strong {
+  color: #00600f;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.skill p {
+  color: #1a237e;
+  font-size: 14px;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 35px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.timeline-marker {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #0277bd 0%, #00838f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 25px;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 3px solid #0277bd;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h4 {
+  color: #0d47a1;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.timeline-content p {
+  color: #1a237e;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  background: #0d47a1;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.footer-nav a:hover {
+  background: #0277bd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-weight: 500;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  article {
+    padding: 30px;
+  }
+
+  .hero {
+    gap: 20px;
+  }
+
+  figure {
+    flex: 0 0 100%;
+  }
+
+  .hero > aside h2 {
+    font-size: 28px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  section > h2 {
+    font-size: 24px;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+</style>
+</head>
+<body>
+
+<main>
+  <header>
+    <h1>✨ Welcome to My World ✨</h1>
+    <p>Nur Nasuhah Muhamad Saupi | Personal Portfolio</p>
+  </header>
+
+  <nav>
+    <a href="homepage.html">🏠 Home</a>
+    <a href="biodata.html">📋 Biodata</a>
+    <a href="experience.html">💼 Experience</a>
+    <a href="education.html">🎓 Education</a>
+    <a href="family.html">👨‍👩‍👧‍👦 Family</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+  </nav>
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero">
+      <figure>
+        <img src="my photo\me3.jpeg" alt="Nur Nasuhah Profile">
+      </figure>
+      <aside>
+        <h2>Hello people!</h2>
+        <p>
+            I'm an <strong>Information Management</strong> student and aspiring professional based in <u>Cheras, Selangor</u>, Malaysia. I'm passionate about <em>information management</em>, <strong>music</strong>, and <span style="color: #0277bd; font-weight: bold;">personal growth</span>. This website is my digital space to share my journey, achievements, and the people who inspire me.
+        </p>
+        <p>
+          Currently pursuing my <strong>undergraduate diploma</strong> while working on professional development and exploring my passions in brass band music and information science.
+        </p>
+        <div class="cta-buttons">
+          <a href="biodata.html" class="btn btn-primary">Learn More About Me</a>
+          <a href="gallery.html" class="btn btn-secondary">View My Gallery</a>
+        </div>
+
+        <!-- Social Media Links -->
+        <aside class="social-links">
+          <h4>Connect With Me</h4>
+          <nav class="social-icons">
+            <a href="https://linkedin.com/in/nasuhahsaupi" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn">in</a>
+            <a href="https://pinterest.com/7shua_" target="_blank" rel="noopener noreferrer" class="social-btn pinterest" title="Pinterest">P</a>
+            <a href="https://instagram.com/7shua_" target="_blank" rel="noopener noreferrer" class="social-btn instagram" title="Instagram">📷</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nasuhahsaupi@gmail.com" target="_blank" class="social-btn email" title="Email">✉</a>
+          </nav>
+        </aside>
+      </aside>
+    </section>
+
+    <!-- Current Time Display -->
+    <time>
+      <h3>Current Time</h3>
+      <p id="clock">00:00:00</p>
+    </time>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+      <h3>🌟 Key Highlights</h3>
+      <ul>
+        <li><strong>Education:</strong> 4 Consecutive Dean's List Awards (Diploma)</li>
+        <li><strong>Current Study:</strong> Undergraduate Diploma - Information Management</li>
+        <li><strong>Professional:</strong> Freelancer with strong leadership skills</li>
+        <li><strong>Passion:</strong> Brass Band Music & Community Involvement</li>
+        <li><strong>Skills:</strong> Organization, Communication, Team Leadership</li>
+      </ul>
+    </section>
+
+    <!-- Features Grid -->
+    <h2>Explore My Journey</h2>
+    <section class="grid">
+      <article class="card">
+        <div class="icon">📋</div>
+        <h3>Personal Details</h3>
+        <p>Get to know me better through my biodata, interests, hobbies, and personal information. Learn what makes me who I am.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">💼</div>
+        <h3>Professional Experience</h3>
+        <p>Discover my work experience, professional skills, and my passion for brass band music and team collaboration.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h3>Educational Background</h3>
+        <p>Learn about my academic journey from secondary school through university, including achievements and awards.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">👨‍👩‍👧‍👦</div>
+        <h3>Family & Bonds</h3>
+        <p>Discover the importance of family in my life and the special people who have shaped my character and values.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">🖼️</div>
+        <h3>Photo Gallery</h3>
+        <p>Browse through my achievements, travel adventures, and cherished moments with friends and loved ones.</p>
+      </article>
+
+      <article class="card">
+        <div class="icon">🌟</div>
+        <h3>My Passions</h3>
+        <p>Music, reading, gardening, and continuous learning. These are the activities that bring joy to my life.</p>
+      </article>
+    </section>
+
+    <!-- Skills Section -->
+    <h2>What I Bring to the Table</h2>
+    <section class="skills-grid">
+      <article class="skill">
+        <strong>Leadership</strong>
+        <p>Ability to guide teams and manage projects with confidence and care</p>
+      </article>
+      <article class="skill">
+        <strong>Organization</strong>
+        <p>Excellent time management and resource planning capabilities</p>
+      </article>
+      <article class="skill">
+        <strong>Teamwork</strong>
+        <p>Collaborative approach to achieving shared goals and objectives</p>
+      </article>
+      <article class="skill">
+        <strong>Problem Solving</strong>
+        <p>Creative and analytical approach to workplace challenges</p>
+      </article>
+      <article class="skill">
+        <strong>Music Expertise</strong>
+        <p>Knowledge of brass instruments and ensemble performance</p>
+      </article>
+    </section>
+
+    <!-- Timeline Section -->
+    <h2>My Journey So Far</h2>
+    <section class="timeline">
+      <article class="timeline-item">
+        <span class="timeline-marker">1</span>
+        <div class="timeline-content">
+          <h4>Secondary Education (2018-2023)</h4>
+          <p>Completed my secondary schooling at SMK Cheras Jaya with strong results (SPM: 6A 3B), establishing a solid foundation for my future.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-marker">2</span>
+        <div class="timeline-content">
+          <h4>Diploma Program (2024-2026)</h4>
+          <p>Pursuing a Diploma in Information Management at UiTM Rembau, earning 4 consecutive Dean's List awards for academic excellence.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-marker">3</span>
+        <div class="timeline-content">
+          <h4>Professional Experience</h4>
+          <p>Gained valuable experience as a Clinic Assistant cum Admin, developing leadership and organizational skills in a professional environment.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- CTA Buttons -->
+    <nav class="footer-nav">
+      <a href="biodata.html">Start with Biodata</a>
+      <a href="education.html">View My Education</a>
+      <a href="family.html">Meet My Family</a>
+      <a href="gallery.html">Browse Gallery</a>
+    </nav>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Nur Nasuhah Muhamad Saupi (Shua). All rights reserved.</p>
+  </footer>
+</main>
+
+<script>
+  // Digital Clock - Real-time Updates
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  
+  // Update clock immediately and then every second
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Smooth scroll animation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Page load notification
+  window.addEventListener('load', function() {
+    console.log('Welcome to Nur Nasuhah\'s Personal Website!');
+    console.log('Thank you for visiting. Enjoy exploring my journey!');
+  });
+</script>
+
+</body>
+</html>

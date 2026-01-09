@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Education - Shua's Personal Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a1e3e 0%, #1a3a52 50%, #0d5a7a 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #0277bd 100%);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+nav {
+  background: linear-gradient(135deg, #e3f2fd 0%, #b3e5fc 100%);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #0d47a1;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+article {
+  padding: 40px;
+}
+
+section > h2 {
+  color: #222882;
+  font-size: 28px;
+  margin: 30px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #667eea;
+}
+
+.education-timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 30px;
+  border-radius: 12px;
+  margin: 25px 0;
+  border-left: 5px solid #667eea;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.timeline-item h3 {
+  color: #222882;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.school-name {
+  color: #764ba2;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.duration {
+  background: white;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #667eea;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.timeline-item p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.academic-details {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.academic-details h4 {
+  color: #222882;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.academic-details ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.academic-details li {
+  padding: 8px 0;
+  color: #555;
+  border-bottom: 1px solid #eee;
+}
+
+.academic-details li:last-child {
+  border-bottom: none;
+}
+
+.academic-details li::before {
+  content: "✓ ";
+  color: #4caf50;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.awards-section {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+  border-left: 5px solid #9c27b0;
+}
+
+.awards-section h3 {
+  color: #6a1b9a;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.award-badge {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.award-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.2);
+}
+
+.award-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.award-badge h4 {
+  color: #6a1b9a;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.award-badge p {
+  color: #666;
+  font-size: 13px;
+}
+
+.undergrad-section {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+  border-left: 5px solid #4caf50;
+}
+
+.undergrad-section h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.undergrad-info {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.undergrad-info h4 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.undergrad-info p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: linear-gradient(135deg, #0d47a1 0%, #0277bd 100%);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #f5f5f5;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.footer-nav a {
+  background: #0d47a1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+  background: #0277bd;
+  transform: translateY(-2px);
+}
+
+footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  article {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  section > h2 {
+    font-size: 20px;
+  }
+
+  .timeline-item {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<main>
+  <header>
+    <h1>🎓 Education</h1>
+    <p>My academic journey and achievements</p>
+  </header>
+
+  <nav>
+    <a href="homepage.html">🏠 Home</a>
+    <a href="biodata.html">📋 Biodata</a>
+    <a href="experience.html">💼 Experience</a>
+    <a href="education.html">🎓 Education</a>
+    <a href="family.html">👨‍👩‍👧‍👦 Family</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+  </nav>
+
+  <article>
+    <section>
+      <h2>📚 Educational Background</h2>
+
+      <div class="education-timeline">
+        <article class="timeline-item">
+          <h3>🏫 Secondary Education</h3>
+          <p class="school-name">Sekolah Menengah Kebangsaan Cheras Jaya</p>
+          <span class="duration">2018 - 2023</span>
+          
+          <p>
+            I completed my secondary education at <u>Sekolah Menengah Kebangsaan Cheras Jaya</u>, a period that was transformative in my academic and personal development. During these formative years, I developed strong foundational knowledge and important life skills.
+          </p>
+          
+          <div class="academic-details">
+            <h4>Sijil Pelajaran Malaysia (SPM) Results</h4>
+            <ul>
+              <li><strong>Grade:</strong>6A 3B</li>
+              <li>Achieved strong performance across subjects</li>
+              <li>Developed discipline and study habits</li>
+              <li>Engaged in extracurricular activities</li>
+              <li>Built lasting friendships and networks</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <h3>📖 Diploma Level</h3>
+          <p class="school-name">UiTM Rembau - Universiti Teknologi MARA, Cawangan Negeri Sembilan</p>
+          <span class="duration">Diploma in Information Management</span>
+          
+          <p>
+            I'm pursuing a <strong>Diploma in Information Management</strong> at <u>UiTM Rembau</u>, gaining valuable knowledge in managing information systems, digital literacy, and organizational processes. This program equipped me with practical skills in the information technology sector.
+          </p>
+          
+          <div class="academic-details">
+            <h4>Program Highlights</h4>
+            <ul>
+              <li>Specialized in information systems management</li>
+              <li>Developed technical and analytical skills</li>
+              <li>Completed practical projects and internships</li>
+              <li>Learned database management and IT applications</li>
+              <li>Enhanced problem-solving abilities</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>🏆 Awards & Recognition</h2>
+      
+      <aside class="awards-section">
+        <h3>Academic Achievements</h3>
+        <p style="color: #6a1b9a; margin-bottom: 20px;">
+          During my academic journey, I was honored to receive recognition for my consistent academic excellence:
+        </p>
+        
+        <div class="awards-grid">
+          <article class="award-badge">
+            <div class="award-icon">🏅</div>
+            <h4>Dean's List</h4>
+            <p>Semester 1 Award</p>
+          </article>
+          <article class="award-badge">
+            <div class="award-icon">🏅</div>
+            <h4>Dean's List</h4>
+            <p>Semester 2 Award</p>
+          </article>
+          <article class="award-badge">
+            <div class="award-icon">🏅</div>
+            <h4>Dean's List</h4>
+            <p>Semester 3 Award</p>
+          </article>
+          <article class="award-badge">
+            <div class="award-icon">🏅</div>
+            <h4>Dean's List</h4>
+            <p>Semester 4 Award</p>
+          </article>
+        </div>
+        
+        <p style="color: #6a1b9a; margin-top: 20px; font-style: italic;">
+          <strong>Note:</strong> Achieved Dean's List honors for 4 consecutive semesters, demonstrating consistent academic excellence and dedication to studies.
+        </p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>📜 Current Level - Undergraduate</h2>
+      
+      <aside class="undergrad-section">
+        <h3>Continuing Higher Education</h3>
+        
+        <div class="undergrad-info">
+          <h4>Current Status</h4>
+          <p>
+            I am currently pursuing my <strong>undergraduate diploma</strong>, building upon the strong foundation I established during my secondary school. This level of education allows me to deepen my knowledge, develop advanced skills, and prepare for a meaningful career in my chosen field.
+          </p>
+          
+          <h4>Focus Areas</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; color: #555;">📌 Advanced information management concepts</li>
+            <li style="padding: 8px 0; color: #555;">📌 Digital transformation and business processes</li>
+            <li style="padding: 8px 0; color: #555;">📌 Research and analytical methodologies</li>
+            <li style="padding: 8px 0; color: #555;">📌 Professional development and leadership skills</li>
+            <li style="padding: 8px 0; color: #555;">📌 Specialized electives and practical applications</li>
+          </ul>
+          
+          <h4 style="margin-top: 20px;">Goals & Aspirations</h4>
+          <p>
+            As an undergraduate student, I am committed to achieving academic excellence while developing the competencies needed to excel in the modern workplace. I aim to graduate with not only strong grades but also practical experience, leadership skills, and a network of professional connections.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section>
+      <h2>📊 Educational Journey Summary</h2>
+      
+      <table>
+        <tr>
+          <th>Level</th>
+          <th>Institution</th>
+          <th>Duration</th>
+          <th>Key Achievement</th>
+        </tr>
+        <tr>
+          <td><strong>Secondary</strong></td>
+          <td>SMK Cheras Jaya</td>
+          <td>2018-2023</td>
+          <td>SPM: 6A 3B</td>
+        </tr>
+        <tr>
+          <td><strong>Diploma</strong></td>
+          <td>Currently Enrolled</td>
+          <td>In Progress</td>
+          <td>4 Semesters Dean's List</td>
+        </tr>
+      </table>
+    </section>
+
+    <nav class="footer-nav">
+      <a href="experience.html">← Back to Experience</a>
+      <a href="family.html">Family →</a>
+    </nav>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Nur Nasuhah (Shua). All rights reserved.</p>
+  </footer>
+</main>
+
+</body>
+</html>
