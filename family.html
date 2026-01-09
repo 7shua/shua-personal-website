@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Gallery - Shua's Personal Website</title>
+<title>Family - Shua's Personal Website</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   background: white;
   border-radius: 20px;
@@ -67,178 +67,231 @@ article {
   padding: 40px;
 }
 
-.gallery-intro {
+section > h2 {
+  color: #0d47a1;
+  font-size: 28px;
+  margin: 30px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #0277bd;
+}
+
+.family-intro {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
-.gallery-intro h3 {
+.family-intro h3 {
   color: #222882;
-  margin-bottom: 10px;
-  font-size: 22px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
-.gallery-intro p {
+.family-intro p {
   color: #555;
   line-height: 1.8;
 }
 
-.stats-cards {
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 25px 0;
+}
+
+.family-card {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 5px solid #ff9800;
+}
+
+.family-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.family-photo {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: white;
+}
+
+.family-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.family-info {
+  padding: 20px;
+}
+
+.family-name {
+  color: #e65100;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.relationship {
+  color: #ff9800;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: inline-block;
+  background: rgba(255, 152, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.family-description {
+  color: #555;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.tribute-section {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+  padding: 35px;
+  border-radius: 12px;
+  margin: 30px 0;
+  border: 3px solid #e91e63;
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.2);
+}
+
+.tribute-section h2 {
+  color: #880e4f;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: none;
+  padding-bottom: 0;
+}
+
+.tribute-message {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 5px solid #e91e63;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tribute-message p {
+  color: #555;
+  line-height: 2;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tribute-message p:first-letter {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.heart-decoration {
+  text-align: center;
+  font-size: 24px;
+  color: #e91e63;
+  margin: 15px 0;
+}
+
+.family-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin: 30px 0;
 }
 
-.stat-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+.stat-box {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
   padding: 25px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-  transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+  border-top: 4px solid #4caf50;
 }
 
 .stat-number {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
+  color: #2e7d32;
   margin-bottom: 10px;
 }
 
 .stat-label {
+  color: #555;
   font-size: 16px;
   font-weight: 600;
-  opacity: 0.9;
 }
 
-.category-section {
-  margin-bottom: 50px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.category-heading {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 40px 0 25px 0;
-  padding-bottom: 15px;
-  border-bottom: 3px solid #667eea;
+th {
+  background: linear-gradient(135deg, #222882 0%, #1a1f5f 100%);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
 }
 
-.category-icon {
-  font-size: 32px;
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
 }
 
-.category-heading h2 {
-  color: #222882;
-  font-size: 26px;
-  margin: 0;
+tr:hover {
+  background: #f5f5f5;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.gallery-item {
-  background: white;
+.memories-section {
+  background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+  padding: 25px;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  margin: 25px 0;
+  border-left: 5px solid #009688;
 }
 
-.gallery-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+.memories-section h3 {
+  color: #00695c;
+  margin-bottom: 15px;
+  font-size: 22px;
 }
 
-.gallery-image {
-  width: 100%;
-  height: 250px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 60px;
-  color: white;
-  font-weight: bold;
-  position: relative;
-  overflow: hidden;
+.memory-list {
+  list-style: none;
+  padding: 0;
 }
 
-.gallery-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.memory-list li {
+  background: white;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #555;
+  border-left: 4px solid #009688;
 }
 
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  color: white;
-  font-size: 14px;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-info {
-  padding: 20px;
-}
-
-.gallery-title {
-  color: #222882;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.gallery-description {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.gallery-date {
-  color: #999;
-  font-size: 12px;
-  margin-top: 10px;
-  font-style: italic;
-}
-
-/* Category specific styling */
-.achievements-section .gallery-image {
-  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
-}
-
-.travel-section .gallery-image {
-  background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
-}
-
-.friends-section .gallery-image {
-  background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
+.memory-list li::before {
+  content: "💕 ";
+  margin-right: 8px;
 }
 
 .footer-nav {
@@ -251,7 +304,7 @@ article {
 }
 
 .footer-nav a {
-  background: #222882;
+  background: #0d47a1;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
@@ -260,12 +313,12 @@ article {
 }
 
 .footer-nav a:hover {
-  background: #764ba2;
+  background: #0277bd;
   transform: translateY(-2px);
 }
 
 footer {
-  background: #222882;
+  background: #0d47a1;
   color: white;
   text-align: center;
   padding: 20px;
@@ -280,13 +333,12 @@ footer {
     font-size: 24px;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  section > h2 {
+    font-size: 20px;
   }
 
-  .category-heading {
-    flex-direction: column;
-    align-items: flex-start;
+  .family-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -295,8 +347,8 @@ footer {
 
 <main>
   <header>
-    <h1>🖼️ Gallery</h1>
-    <p>Capturing life's beautiful moments</p>
+    <h1>👨‍👩‍👧‍👦 Family</h1>
+    <p>The people who mean the most to me</p>
   </header>
 
   <nav>
@@ -309,264 +361,191 @@ footer {
   </nav>
 
   <article>
-    <section class="gallery-intro">
-      <h3>Welcome to My Gallery</h3>
+    <section class="family-intro">
+      <h3>My Family</h3>
       <p>
-        This collection showcases the moments that matter most to my achievements that I'm proud of, travels that have broadened my horizons, and precious memories with friends who have become like family. Each photo tells a story of growth, joy, and meaningful connections. I hope you enjoy this glimpse into my life.
+        Family is the <strong>foundation of who I am</strong>. These are the people who have supported me, believed in me, and shaped my values and character. Each family member plays a unique and important role in my life, and I am grateful for their love, guidance, and presence. This page is dedicated to honoring the people who matter most to me.
       </p>
     </section>
 
     <section>
-      <div class="stats-cards">
-        <figure class="stat-card">
-          <figcaption class="stat-number">16</figcaption>
-          <p class="stat-label">Total Photos</p>
-        </figure>
-        <figure class="stat-card">
-          <figcaption class="stat-number">3</figcaption>
-          <p class="stat-label">Categories</p>
-        </figure>
-        <figure class="stat-card">
-          <figcaption class="stat-number">∞</figcaption>
-          <p class="stat-label">Memories</p>
-        </figure>
-      </div>
-    </section>
+      <h2>👨‍👩‍👧‍👦 Family Members</h2>
 
-    <!-- Achievements Section -->
-    <section class="category-section achievements-section">
-      <header class="category-heading">
-        <span class="category-icon">🏆</span>
-        <h2>Achievements</h2>
-      </header>
-      <p style="color: #666; margin-bottom: 20px;">
-        Milestones and accomplishments that represent my growth, success, and dedication. These moments reflect hard work, perseverance, and the support of those around me.
-      </p>
-
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\deanslist.jpeg" alt="Dean's List Award">
-            <figcaption class="gallery-overlay">Dean's List Award</figcaption>
+      <div class="family-grid">
+        <!-- Father -->
+        <figure class="family-card">
+          <picture class="family-photo">
+            <img src="my photo\father.jpeg" alt="Muhamad Saupi">
           </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Academic Excellence</h3>
-            <p class="gallery-description">Recognized for achieving Dean's List honors for 4 consecutive semesters, demonstrating dedication to academic excellence.</p>
-            <time class="gallery-date">2025</time>
+          <figcaption class="family-info">
+            <h3 class="family-name">Muhamad Saupi bin Zakaria</h3>
+            <span class="relationship">Father</span>
+            <p class="family-description">
+              My father is a pillar of strength and wisdom in my life. His dedication, hard work, and unwavering support have been instrumental in my journey. I admire his resilience and the values he has instilled in me.
+            </p>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\enrolled.jpeg" alt="Diploma Enrolled">
-            <figcaption class="gallery-overlay">Diploma Enrolled</figcaption>
+        <!-- Mother - Special Tribute -->
+        <figure class="family-card" style="border-top-color: #e91e63;">
+          <picture class="family-photo" style="background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%); display: flex; align-items: center; justify-content: center; font-size: 80px;">
+            <img src="my photo\mother.jpeg" alt="Sarifah binti Derahman">
           </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Diploma Enrolled</h3>
-            <p class="gallery-description">Successfully enrolled my Diploma in Information Management at UiTM Rembau, opening doors to new opportunities.</p>
-            <time class="gallery-date">2024</time>
+          <figcaption class="family-info">
+            <h3 class="family-name" style="color: #c2185b;">Sarifah binti Derahman</h3>
+            <span class="relationship" style="background: rgba(233, 30, 99, 0.1); color: #e91e63;">Mother ♥</span>
+            <p class="family-description">
+              My dearest mother, though you are no longer with us in person, your love, warmth, and guidance continue to inspire me every day. You are forever in my heart.
+            </p>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\appreciation.jpeg" alt="Internship Appreciation">
-            <figcaption class="gallery-overlay">Internship Appreciation</figcaption>
+        <!-- Eldest Sister -->
+        <figure class="family-card">
+          <picture class="family-photo">
+            <img src="my photo\eldestsis.jpeg" alt="Nor Sukriah">
           </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Internship Appreciation</h3>
-            <p class="gallery-description">Honored for my contributions to team projects and leadership initiatives during my internships.</p>
-            <time class="gallery-date">2025</time>
+          <figcaption class="family-info">
+            <h3 class="family-name">Nor Sukriah binti Shaari</h3>
+            <span class="relationship">Eldest Sister</span>
+            <p class="family-description">
+              As my eldest sister, you have been a role model and mentor to me. Your strength, wisdom, and care have guided me through many chapters of my life. Thank you for always being there.
+            </p>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\intern.jpeg" alt="Professional Milestone">
-            <figcaption class="gallery-overlay">Professional Milestone</figcaption>
+        <!-- Youngest Sister -->
+        <figure class="family-card">
+          <picture class="family-photo">
+            <img src="my photo\youngestsis.jpeg" alt="Nurin Jazlina">
           </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Clinic Assistant cum Admin Position</h3>
-            <p class="gallery-description">Achieved professional growth through my role as a Clinic Assistant cum Admin, developing valuable leadership skills.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Travel Section -->
-    <section class="category-section travel-section">
-      <header class="category-heading">
-        <span class="category-icon">✈️</span>
-        <h2>Travel & Adventures</h2>
-      </header>
-      <p style="color: #666; margin-bottom: 20px;">
-        Exploring new places, experiencing different cultures, and creating unforgettable memories around the world. These journeys have broadened my perspective and enriched my life.
-      </p>
-
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\beach.jpeg" alt="Beach Paradise">
-            <figcaption class="gallery-overlay">Beach Paradise</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Beach Paradise</h3>
-            <p class="gallery-description">A serene beach getaway where I found peace and rejuvenation, surrounded by the beauty of nature.</p>
-            <time class="gallery-date">2025</time>
+          <figcaption class="family-info">
+            <h3 class="family-name">Nurin Jazlina binti Muhamad Saupi</h3>
+            <span class="relationship">Youngest Sister</span>
+            <p class="family-description">
+              My youngest sister brings joy and laughter into our family. Your vibrant personality and enthusiasm inspire me daily. I'm proud to have you as my sister and friend.
+            </p>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\mountain.jpeg" alt="Mountain Adventure">
-            <figcaption class="gallery-overlay">Mountain Adventure</figcaption>
+        <!-- Youngest Brother -->
+        <figure class="family-card">
+          <picture class="family-photo">
+            <img src="my photo\brother.jpeg" alt="Muhamad Syakir">
           </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Mountain Hiking</h3>
-            <p class="gallery-description">Conquering mountain peaks and enjoying breathtaking views that test my physical and mental limits.</p>
-            <time class="gallery-date">2025</time>
+          <figcaption class="family-info">
+            <h3 class="family-name">Muhamad Syakir bin Muhamad Saupi</h3>
+            <span class="relationship">Youngest Brother</span>
+            <p class="family-description">
+              My youngest brother, you bring a special spark to our family. Your growth and development fill us with pride. I'm here to support you every step of the way.
+            </p>
           </figcaption>
         </figure>
 
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\artgallery.jpeg" alt="Art Gallery">
-            <figcaption class="gallery-overlay">Art Gallery</figcaption>
+        <!-- Niece -->
+        <figure class="family-card">
+          <picture class="family-photo">
+            <img src="my photo\niece.jpeg" alt="Nur Ameena Yusra">
           </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Art Gallery</h3>
-            <p class="gallery-description">Exploring artistic works and cultural pieces that connect me to the beauty and heritage.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\cafe.jpeg" alt="Cafe Hopping">
-            <figcaption class="gallery-overlay">Cafe Hopping</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Cafe Hopping</h3>
-            <p class="gallery-description">Visiting multiple cafes, each with unique charm and beauty, creating lasting classical memories.</p>
-            <time class="gallery-date">2025</time>
+          <figcaption class="family-info">
+            <h3 class="family-name">Nur Ameena Yusra binti Muhamad Nur Iman</h3>
+            <span class="relationship">Niece</span>
+            <p class="family-description">
+              My beloved niece, you represent the future of our family. Your innocence, curiosity, and joy remind us of life's simple pleasures. I cherish the precious moments we share.
+            </p>
           </figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Friends & Moments Section -->
-    <section class="category-section friends-section">
-      <header class="category-heading">
-        <span class="category-icon">👯</span>
-        <h2>Friends & Precious Moments</h2>
-      </header>
-      <p style="color: #666; margin-bottom: 20px;">
-        Cherished moments spent with wonderful friends who bring joy, laughter, and support into my life. These are the people who make every moment memorable.
-      </p>
+    <!-- Special Tribute to Mother -->
+    <aside class="tribute-section">
+      <h2>💝 A Tribute to My Mother</h2>
+      <blockquote class="tribute-message">
+        <p>
+          Even though you are no longer with us, your love and memory remain eternally in my heart. You were the light that guided my path, the strength that supported my dreams, and the love that defined who I am. Every day, I carry your lessons, your kindness, and your sacrifice with me. Though I miss you deeply, I know that you are watching over me from above. Your legacy lives on through the values you taught me and the person you helped me become. I will always love you, and you will forever be my inspiration.
+        </p>
+        <div class="heart-decoration">💕 ♥ 💕</div>
+        <p style="font-size: 14px; color: #999; margin-top: 15px;">
+          <em>With all my love and deepest gratitude</em>
+        </p>
+      </blockquote>
+    </aside>
 
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\jkr.jpeg" alt="Homegirls Gathering">
-            <figcaption class="gallery-overlay">Homegirls Gathering</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Homegirls Gathering</h3>
-            <p class="gallery-description">A fun hangout with my closest friends, filled with laughter, genuine connections, and unforgettable moments.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
+    <section>
+      <h2>📊 Family Quick Facts</h2>
+      
+      <div class="family-stats">
+        <figure class="stat-box">
+          <figcaption class="stat-number">7</figcaption>
+          <p class="stat-label">Family Members</p>
         </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\birthday.jpeg" alt="Birthday Celebration">
-            <figcaption class="gallery-overlay">Birthday Celebration</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Birthday Celebration</h3>
-            <p class="gallery-description">Celebrating special occasions with friends who have become family, surrounded by love and joy.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
+        <figure class="stat-box">
+          <figcaption class="stat-number">2</figcaption>
+          <p class="stat-label">Sisters</p>
         </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\bww.jpeg" alt="Group Photo">
-            <figcaption class="gallery-overlay">Group Photo</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Unforgettable Moments</h3>
-            <p class="gallery-description">Capturing the essence of friendship through candid photos that preserve memories forever.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
+        <figure class="stat-box">
+          <figcaption class="stat-number">1</figcaption>
+          <p class="stat-label">Brother</p>
         </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\studybud.jpeg" alt="Study Friends">
-            <figcaption class="gallery-overlay">Study Friends</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Study Buddies</h3>
-            <p class="gallery-description">Friend who support my academic journey, making study sessions enjoyable and productive.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\kopitiam.jpeg" alt="Kopitiam Moments">
-            <figcaption class="gallery-overlay">Kopitiam Hangout</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Char Kuetiau & Conversations</h3>
-            <p class="gallery-description">Quality time with friends over Char Kuetiau, sharing stories, jokes, and laughter.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\card.jpeg" alt="Game Night">
-            <figcaption class="gallery-overlay">Game Night</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Game Night Fun</h3>
-            <p class="gallery-description">Fun-filled evenings with friends playing games, creating memories and strengthening bonds.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\vacation.jpeg" alt="Adventure with Friends">
-            <figcaption class="gallery-overlay">Adventure Time</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Adventure with Friends</h3>
-            <p class="gallery-description">Exploring new places and trying new experiences together, making adventurous memories.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <picture class="gallery-image">
-            <img src="my photo\mae.jpeg" alt="Significant Other">
-            <figcaption class="gallery-overlay">Significant Other</figcaption>
-          </picture>
-          <figcaption class="gallery-info">
-            <h3 class="gallery-title">Close Companions</h3>
-            <p class="gallery-description">A person who has shaped my character and continues to inspire me every day.</p>
-            <time class="gallery-date">2025</time>
-          </figcaption>
+        <figure class="stat-box">
+          <figcaption class="stat-number">1</figcaption>
+          <p class="stat-label">Niece</p>
         </figure>
       </div>
+    </section>
+
+    <section>
+      <h2>🌟 Family Values</h2>
+      
+      <table>
+        <tr>
+          <th>Value</th>
+          <th>Meaning to Us</th>
+          <th>How We Practice</th>
+        </tr>
+        <tr>
+          <td><strong>Love & Respect</strong></td>
+          <td>Deep care for one another</td>
+          <td>Supporting each other through life's challenges</td>
+        </tr>
+        <tr>
+          <td><strong>Unity</strong></td>
+          <td>Standing together as one</td>
+          <td>Gathering for important occasions and celebrations</td>
+        </tr>
+        <tr>
+          <td><strong>Education</strong></td>
+          <td>Commitment to learning</td>
+          <td>Encouraging academic pursuit and personal growth</td>
+        </tr>
+        <tr>
+          <td><strong>Hard Work</strong></td>
+          <td>Dedication and perseverance</td>
+          <td>Setting goals and working toward them together</td>
+        </tr>
+        <tr>
+          <td><strong>Faith & Hope</strong></td>
+          <td>Belief in a better future</td>
+          <td>Supporting each other spiritually and emotionally</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="memories-section">
+      <h3>✨ Cherished Family Moments</h3>
+      <ul class="memory-list">
+        <li>Family gatherings and celebrations filled with laughter</li>
+        <li>Late-night conversations sharing dreams and aspirations</li>
+        <li>Supporting each other through academic and personal milestones</li>
+        <li>Creating lasting memories that will be treasured forever</li>
+        <li>The unconditional love that binds us together as a family</li>
+      </ul>
     </section>
 
     <nav class="footer-nav">
-      <a href="family.html">← Back to Family</a>
-      <a href="homepage.html">Back to Home →</a>
+      <a href="education.html">← Back to Education</a>
+      <a href="gallery.html">Gallery →</a>
     </nav>
   </article>
 
